@@ -48,6 +48,7 @@ echo $number;
 <td>
 <a  href="/main/cetakutama"><img src="/images/printer.svg" title="Cetak" /></a>
 <a  href="/main/getutama"><img src="/images/play.svg" title="Selanjutnya" /></a>
+<a><img id="tblacak" src="/images/play.svg" title="Selanjutnya" /></a>
 <a  href="/main/index"><img src="/images/home.svg" title="Ke Halama Utama" /></a>
 </td>
 </tr>
@@ -99,5 +100,39 @@ addtrailingzero = function(num){
     return num;
 }
 mytimer(10);
+
+
+acak = function(){
+    //if($("#tblacak").attr("src","/images/stop.svg")){
+     return   setInterval(function(){
+            $.ajax({
+                url:'/main/jsonutama',
+                type:'post',
+                dataType:'json'
+            })
+            .done(function(out){
+                $.ajax({
+                    url:"/main/getrandomcolors",
+                    type:"post"
+                })
+                .done(function(col){
+                    console.log("Col",col);
+                    console.log("OUT",addtrailingzero(out));
+                    $("#displaywinner").html(addtrailingzero(out));
+                    $("#displaywinner").css("color","red");
+                });
+            });
+        },100);
+   // }
+}
+$("#tblacak").click(function(){
+    if($("#tblacak").attr("src")=="/images/play.svg"){
+        $("#tblacak").attr("src","/images/stop.svg")
+        acak();
+    }else{
+        $("#tblacak").attr("src","/images/play.svg")
+        clearInterval(acak);
+    }
+});
 </script>
 </html>
