@@ -24,6 +24,14 @@
             <th colspan=4><a target="_blank" href="/main/getutama"><img src="/images/crown.svg" title="Pemenang Utama" /></a>
             </th>
         </tr>
+        <tr>
+            <th colspan=4><a target="_blank" href="/main/cetakhiburan">Cetak</a>
+            </th>
+            <th colspan=4><a href="/main/gethiburan">Refresh</a>
+            </th>
+            <th colspan=4><a target="_blank" href="/main/getutama">Utama</a>
+            </th>
+        </tr>        
         <tr><th colspan=12>300 Pemenang Hadiah Hiburan</th></tr>
     </thead>
 <tbody>
