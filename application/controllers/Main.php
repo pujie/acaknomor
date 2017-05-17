@@ -55,6 +55,9 @@ class Main extends CI_Controller{
         $data = array("numbers"=>$_SESSION["numbers"]);
         $this->load->view("cetak",$data);
     }
+    function mulaiutama(){
+        $this->load->view("mulaiutama");
+    }
     function getutama(){
         session_start();
         $alldata = $this->getarray();
@@ -72,7 +75,7 @@ class Main extends CI_Controller{
                 $_SESSION["utama"] = $out;
                 unset($alldata[$randomkey]);
                 $this->savearray($alldata);
-                $data = array("number"=>$out,"sesscount"=>count($_SESSION['remain']) - 1249);
+                $data = array("number"=>$out,"sesscount"=>count($_SESSION['remain']) - 1949);
                 $this->load->view("utama",$data);
             }
             else
@@ -83,6 +86,34 @@ class Main extends CI_Controller{
             $this->load->view("datahabis");
         }
     }
+    function getutamarefresh(){
+        session_start();
+        $alldata = $this->getarray();
+        $randomkey = array_rand($alldata);
+        if(!isset($_SESSION["winnerarray"])){
+            $_SESSION["winnerarray"] = array();
+        }
+        if(count($alldata)>0){
+            $out = $alldata[$randomkey]  ;
+            array_push($_SESSION["winnerarray"],$out);
+            if(1==2){
+                echo "winnercount " . count($_SESSION["winnerarray"]);
+            }
+            if(count($_SESSION["winnerarray"])<=50){
+                $_SESSION["utama"] = $out;
+              //  unset($alldata[$randomkey]);
+                $this->savearray($alldata);
+                $data = array("number"=>$out,"sesscount"=>count($_SESSION['remain']) - 1949);
+                $this->load->view("utama",$data);
+            }
+            else
+            {
+                $this->load->view("datahabis");
+            }
+        }else{
+            $this->load->view("datahabis");
+        }
+    }    
     function jsonutama(){
         session_start();
         $alldata = $this->getarray();

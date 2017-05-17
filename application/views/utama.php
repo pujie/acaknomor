@@ -43,10 +43,23 @@ echo $number;
 </td>
 </tr>
 </tbody>
+<footer>
+<tr>
+<td>
+<a  href="/main/cetakutama"><img src="/images/printer.svg" title="Cetak" /></a>
+<a  href="/main/getutama"><img src="/images/play.svg" title="Selanjutnya" /></a>
+<a  href="/main/index"><img src="/images/home.svg" title="Ke Halama Utama" /></a>
+</td>
+</tr>
+<tr>
+    <td>
+        <a  href="/main/getutamarefresh"><img src="/images/refresh.svg" title="Ke Halama Utama" /></a>
+    </td>
+</tr>
+</footer>
 </table>
-<a  class="button" class="button"  href="/main/cetakutama">Cetak</a>
-<a  class="button" href="/main/getutama">Selanjutnya</a>
-<a  class="button" href="/main/index">Kembali Ke Halaman Utama</a>
+
+
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js">
 </script>
 <script type="text/javascript" >
@@ -69,7 +82,6 @@ mytimer = function(t){
                 })
                 .done(function(col){
                     console.log("Col",col);
-                    $("#displaywinner").css("color",col);
                     console.log("OUT",addtrailingzero(out));
                     $("#displaywinner").html(addtrailingzero(out));
                     $("#displaywinner").css("color","red");
@@ -86,6 +98,6 @@ addtrailingzero = function(num){
     }
     return num;
 }
-mytimer(5);
+mytimer(10);
 </script>
 </html>

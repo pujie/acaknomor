@@ -7,12 +7,12 @@
 }
 </style>
 <table id="hiburan">
-<thead><tr><th colspan=20>Nomor</th></tr></thead>
+<thead><tr><th colspan=12>Nomor</th></tr></thead>
 <tbody>
-<?php for($row = 0; $row <15;$row ++){?>
+<?php for($row = 0; $row <25;$row ++){?>
     <tr>
-        <?php for($col=1;$col<=20;$col++){?>
-        <?php $index = $col+($row*20);?>
+        <?php for($col=1;$col<=12;$col++){?>
+        <?php $index = $col+($row*12);?>
         <td ><?php 
         echo $numbers[$index];
         }?>

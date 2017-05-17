@@ -1,7 +1,7 @@
-<h1>300 Pemenang Hadiah Hiburan</h1>
 <style>
 #hiburan{
     padding:5px;
+    width: 100%;
 }
 #hiburan tbody tr td{
     border: 1px solid black;
@@ -15,12 +15,22 @@
 }
 </style>
 <table id="hiburan">
-<thead><tr><th colspan=20>Nomor</th></tr></thead>
+    <thead>
+        <tr>
+            <th colspan=4><a target="_blank" href="/main/cetakhiburan"><img src="/images/printer.svg" title="Cetak" /></a>
+            </th>
+            <th colspan=4><a href="/main/gethiburan"><img src="/images/refresh.svg" title="Refresh" /></a>
+            </th>
+            <th colspan=4><a target="_blank" href="/main/getutama"><img src="/images/crown.svg" title="Pemenang Utama" /></a>
+            </th>
+        </tr>
+        <tr><th colspan=12>300 Pemenang Hadiah Hiburan</th></tr>
+    </thead>
 <tbody>
-<?php for($row = 0; $row <15;$row ++){?>
+<?php for($row = 0; $row <25;$row ++){?>
     <tr>
-        <?php for($col=1;$col<=20;$col++){?>
-        <?php $index = $col+($row*20);?>
+        <?php for($col=1;$col<=12;$col++){?>
+        <?php $index = $col+($row*12);?>
         <td ><?php 
         echo $numbers[$index];
         }?>
@@ -29,7 +39,3 @@
 <?php }?>
 </tbody>
 </table>
-
-<a class="button" target="_blank" href="/main/cetakhiburan">Cetak</a>
-<a class="button" href="/main/gethiburan">Reload</a>
-<a class="button" href="/main/getutama">Pemenang Utama</a>
