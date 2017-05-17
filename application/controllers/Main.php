@@ -40,7 +40,7 @@ class Main extends CI_Controller{
         $this->load->model("data");
         $alldata = $this->data->numbers();
         $arr = array();
-        for($c=1;$c<=200;$c++){
+        for($c=1;$c<=300;$c++){
             $randomkey = array_rand($alldata);
             $arr[$c] = $alldata[$randomkey]  ;
             unset($alldata[$randomkey]);
@@ -82,6 +82,16 @@ class Main extends CI_Controller{
         }else{
             $this->load->view("datahabis");
         }
+    }
+    function jsonutama(){
+        session_start();
+        $alldata = $this->getarray();
+        $randomkey = array_rand($alldata);
+        echo "{'out':"+$alldata[$randomkey] + "}" ;
+    }
+    function getrandomcolors(){
+        $cols = array("red"=>"red","yellow"=>"yellow","green"=>"green","blue"=>"blue","pink"=>"pink");
+        echo array_rand($cols,1);
     }
     function cetakutama(){
         session_start();

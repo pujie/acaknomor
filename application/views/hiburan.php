@@ -1,4 +1,4 @@
-<h1>200 Pemenang Hadiah Hiburan</h1>
+<h1>300 Pemenang Hadiah Hiburan</h1>
 <style>
 #hiburan{
     padding:5px;
@@ -15,9 +15,9 @@
 }
 </style>
 <table id="hiburan">
-<thead><tr><th colspan=16>Nomor</th></tr></thead>
+<thead><tr><th colspan=20>Nomor</th></tr></thead>
 <tbody>
-<?php for($row = 0; $row <10;$row ++){?>
+<?php for($row = 0; $row <15;$row ++){?>
     <tr>
         <?php for($col=1;$col<=20;$col++){?>
         <?php $index = $col+($row*20);?>

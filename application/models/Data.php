@@ -4,7 +4,7 @@ class Data extends CI_Model{
         $this->load->helper("common");
 
         $arr = array();
-        for($c=1;$c<=1500;$c++){
+        for($c=1;$c<=2300;$c++){
             array_push($arr,add_trailing_zero(strval($c)));
         }
         return $arr;
